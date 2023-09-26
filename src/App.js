@@ -97,63 +97,23 @@ function PackingList({ items, onDeleteItem, onCheckedItem }) {
     .sort((a, b) => Number(a.packed) - Number(b.packed));
 
   return (
-    <div>
-      <ul className="list">
-        {
-          sortedItems.map(item => (
-            <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onCheckedItem={onCheckedItem} />
-          ))
-        }
-      </ul>
-      <div className="actions">
-        <select value={sortBy} onChange={e => setSortBy(e.target.value)}>
-          <option value="input">sort by input</option>
-          <option value="description">sort by description</option>
-          <option value="packed">sort by packed</option>
-        </select>
-        <button>clear list</button>
-      </div>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
 }
-
-function Item({ item, onDeleteItem, onCheckedItem }) {
-  return (
-    <li>
-      <input type="checkbox" value={item.id} onChange={() => onCheckedItem(item.id)}/>
-      <span style={item.packed ? {textDecoration: "line-through"} : {}}>
-        {item.quantity} {item.description}
-      </span>
-      <button onClick={() => onDeleteItem(item.id)}>❌</button>
-    </li>
-  );
-}
-
-
-function Stats({ items }) {
-
-  const numItems = items.length;
-  const packedItems = items.filter(item => item.packed === true).length;
-  const packedPercent = Math.floor((packedItems / numItems)*100);
-
-  return (
-    <footer className='stats'>
-    {
-      packedPercent === 100 ? (
-        <em>You got everything. Ready to go! ✈ ).</em>
-      ) : (
-        numItems === 0 ? (
-          <em>Add items to the list for packing.</em>
-        ) : (
-          <em>You have {numItems} items on your list, and you already packed {packedItems} ({packedPercent? packedPercent : 0}%).</em>
-        )
-      )
-    }
-      
-    </footer>
-  )
-}
-
-
 
 export default App;
