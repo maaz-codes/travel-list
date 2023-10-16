@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/maaz-codes/travel-list/static/css/main.d84fa843.css",
+    "main.js": "/maaz-codes/travel-list/static/js/main.d72231df.js",
+    "index.html": "/maaz-codes/travel-list/index.html",
+    "main.d84fa843.css.map": "/maaz-codes/travel-list/static/css/main.d84fa843.css.map",
+    "main.d72231df.js.map": "/maaz-codes/travel-list/static/js/main.d72231df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d84fa843.css",
+    "static/js/main.d72231df.js"
+  ]
+}
